@@ -9,8 +9,8 @@ import wordsData from "./data/words_data.json"; // Import JSON data
 
 const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [currentLanguage, setCurrentLanguage] = useState<string>(
-    localStorage.getItem("currentLanguage") || "uz"
+  const [currentLanguage, setCurrentLanguage] = useState<"uz" | "en">(
+    (localStorage.getItem("currentLanguage") as "uz" | "en") || "uz"
   );
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
 

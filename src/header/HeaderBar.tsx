@@ -10,9 +10,8 @@ import search from "../assets/search.svg";
 interface HeaderBarProps {
   searchQuery: string;
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
-  currentLanguage: string;
-  setCurrentLanguage: React.Dispatch<React.SetStateAction<string>>;
-  
+  currentLanguage: "uz" | "en";
+  setCurrentLanguage: React.Dispatch<React.SetStateAction<"uz" | "en">>;
 }
 
 const HeaderBar: React.FC<HeaderBarProps> = ({
@@ -23,7 +22,7 @@ const HeaderBar: React.FC<HeaderBarProps> = ({
 }) => {
   const navigate = useNavigate();
 
-  const handleLanguageChange = (lang: string) => {
+  const handleLanguageChange = (lang: "uz" | "en") => {
     setCurrentLanguage(lang);
   };
 
@@ -35,7 +34,9 @@ const HeaderBar: React.FC<HeaderBarProps> = ({
     <div className="header-container">
       <header className="header-bar">
         <div className="logo">
-          <a href="/"><img src={logoImage} alt="Logo" /></a>
+          <a href="/">
+            <img src={logoImage} alt="Logo" />
+          </a>
         </div>
 
         <div className="search-bar hidden">
