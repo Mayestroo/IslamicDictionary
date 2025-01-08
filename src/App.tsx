@@ -42,25 +42,27 @@ const App: React.FC = () => {
           setCurrentLanguage={setCurrentLanguage}
         />
 
-        {/* Conditional rendering based on screen size */}
-        {isMobile ? (
-          <DictionaryApp
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            currentLanguage={currentLanguage}
-            data={wordsData} // Pass JSON data
-          />
-        ) : (
-          <MainComponent
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            currentLanguage={currentLanguage}
-            data={wordsData} // Pass JSON data
-          />
-        )}
-
-        {/* Routing setup */}
         <Routes>
+          <Route
+            path="/"
+            element={
+              isMobile ? (
+                <DictionaryApp
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                  currentLanguage={currentLanguage}
+                  data={wordsData} // Pass JSON data
+                />
+              ) : (
+                <MainComponent
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                  currentLanguage={currentLanguage}
+                  data={wordsData} // Pass JSON data
+                />
+              )
+            }
+          />
           <Route
             path="/detail/:id"
             element={
