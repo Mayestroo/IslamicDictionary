@@ -1,0 +1,69 @@
+.word-detail {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.word-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.word-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.word-translation {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.word-pronunciation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sound-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sound-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.word-details {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.definition {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.quote {
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px;
+  border-left: 4px solid #007BFF;
+  background-color: #e9f5ff;
+}
+
+.source {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #333;
+}

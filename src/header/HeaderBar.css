@@ -1,0 +1,240 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/dictionary-app/public/fonts/HelveticaNeueBlack.otf");
+}
+.header-container {
+  font-family: "Helvetica Neue", sans-serif !important;
+  padding: 0 20px; /* Add padding for spacing */
+  width: 100%;
+  margin: 0 auto; /* Center the container */
+  max-width: 1440px; /* Optional: set a max width */
+}
+
+.header-bar {
+  border-bottom: 1px solid #05060f1a;
+  border-radius: 32px;
+  width: 100%; /* Make sure the header takes up 100% of the width */
+  padding: 1rem 2rem;
+  background-color: #ffffff; /* Set a background color for the header */
+  display: flex;
+  justify-content: space-around; /* Distribute content across the header */
+  align-items: center; /* Vertically center content */
+  box-sizing: border-box; /* Include padding in width calculation */
+  position: fixed; /* Fixed at the top of the page */
+  top: 0; /* Position at the top */
+  left: 0; /* Ensure it's aligned to the left */
+  z-index: 1000; /* Make sure it's above other elements */
+}
+
+.logo img {
+  width: 70px;
+  height: auto;
+}
+
+.lang-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  gap: 8px; /* Add space between the icon and text */
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  color: #333;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.lang-icon {
+  margin-right: 8px; /* Add spacing between the icon and text */
+}
+
+.search-bar {
+  display: flex; /* Use flex to arrange items in a row */
+  align-items: center; /* Vertically center the items */
+  border: 1px solid #ddd; /* Optional: add a border */
+  padding: 12px 16px; /* Optional: padding inside the search bar */
+  background-color: #ffffff; /* Optional: background color */
+  border-radius: 16px;
+  width: 35%;
+}
+
+.search-icon {
+  width: 20px; /* Adjust size */
+  height: 20px;
+  margin-right: 8px; /* Add spacing between the icon and input */
+}
+
+.search-input {
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline */
+  width: 100%; /* Make input take the available space */
+  padding: 5px; /* Add some padding */
+  background-color: transparent;
+  color: #000;
+  font-size: 16px;
+  font-family: "Inter", sans-serif; 
+}
+
+.search-input::placeholder {
+  color: #9a9d9a;
+  
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.about-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  color: #000;
+  z-index: 9999 !important;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  background: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #000;
+  z-index: 9999 !important;
+  border: none; /* Removed border */
+}
+
+.dropdown-toggle:hover {
+  border: none; /* Ensures no border on hover */
+}
+
+.dropdown-icon {
+  width: 32px; /* Adjust size */
+  height: 24px;
+  margin-right: 8px;
+}
+
+.dropdown-menu {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* Initially hidden */
+  border-radius: 16px;
+  z-index: 9999 !important;
+}
+
+.dropdown-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #000; /* Text color */
+  border-radius: 16px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: #f0f0f0;
+}
+
+.language-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.download-button {
+  display: flex; /* Use flex to arrange items in a row */
+  align-items: center; /* Vertically center the items */
+  background-color: #07c877;
+  gap: 8px; /* Add space between the icon and text */
+  color: white;
+  border: none;
+  padding: 12px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.download-button img.download-icon {
+  width: 24px !important; /* Adjust size */
+  height: 24px !important;
+  margin-right: 8px; /* Add space between the icon and the text */
+}
+
+.download-button span {
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.download-button:hover {
+  background-color: #218838;
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+.d-hidden {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  button, .dropdown-item {
+    gap: 0 !important;
+    font-size: 14px !important;
+  }
+  .header-bar {
+    border-bottom: none;
+  }
+  .logo img {
+    width: 50px;
+    height: auto;
+  }
+  .dropdown-icon {
+    width: 24px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .d-hidden {
+    display: flex;
+    margin: 10px 0;
+  }
+
+  .header-bar {
+    padding: 1rem;
+    justify-content: space-between;
+  }
+  .search-bar {
+    width: 100%;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    /* display: none; */
+  }
+
+  .about-link {
+    display: none;
+  }
+
+  .download-button {
+    display: none;
+  }
+}

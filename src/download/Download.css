@@ -1,0 +1,76 @@
+.container {
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 85%;
+  gap: 50px;
+}
+
+.qr-section {
+  /* margin-bottom: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.qr-section h1 {
+  font-weight: 500;
+  font-size: 56px;
+}
+
+.qr-code {
+    
+  width: 200px;
+  height: 200px;
+}
+
+/* .qr-code img {
+  width: 150px;
+  height: 150px;
+  margin: 10px 0;
+} */
+
+.download-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between the icon and text */
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.app-store,
+.google-play,
+.apk-file {
+  border: 1px solid #0000001a;
+  border-radius: 70px;
+  background-color: #fff;
+  color: #000;
+}
+
+.button-icon {
+  font-size: 20px;
+}
+
+.phone {
+  width: 100%;
+  height:85%;
+}

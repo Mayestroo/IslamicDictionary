@@ -1,0 +1,90 @@
+/* General modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content styling */
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 50px;
+  width: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-y: auto;
+  color: #264e2b;
+}
+
+/* Close button styling */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 22px;
+  background: transparent;
+  border: none;
+  font-size: 48px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Subtitle (word in English) */
+.modal-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.modal-defination {
+  font-family: "Helvetica Neue", sans-serif !important;
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+/* Sound button styling */
+.sound-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.sound-button img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Modal details styling */
+.modal-details {
+  font-family: "Inter", sans-serif;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.modal-details p {
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.modal-details strong {
+  font-weight: bold;
+}

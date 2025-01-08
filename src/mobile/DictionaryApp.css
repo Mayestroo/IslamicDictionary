@@ -1,0 +1,79 @@
+body {
+  font-family: "Inter", sans-serif !important;
+}
+
+.header {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 10; /* Keeps it above other elements */
+  padding: 20px 20px; /* Matches the dictionary-app padding */
+}
+
+.dictionary-app {
+  padding: 0 20px;
+}
+
+.table-cell {
+  padding: 10px;
+}
+
+.table-cell:first-child {
+  flex: 0.2;
+}
+
+.table-cell:last-child {
+  flex: 0.3;
+}
+
+.main-container {
+  padding: 16px;
+}
+
+/* .search-bar {
+  margin: 0 0 20px 0;
+} */
+
+.search-bar input {
+  border: none;
+  font-size: 16px;
+}
+
+.word-list {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.word-item {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-top: 1px solid #eaeef4;
+  cursor: pointer;
+  background: #fff;
+}
+
+.word-title {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.word-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 16px;
+}
+
+.word-link .word-main {
+  color: #264f2b;
+}
+
+.word-link .word-secondary {
+  color: #9a9d9a;
+}

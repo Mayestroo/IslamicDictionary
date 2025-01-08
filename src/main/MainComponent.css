@@ -1,0 +1,155 @@
+/* MainComponent */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 90%;
+  margin-top: 140px;
+
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 500;
+}
+
+nav ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+nav ul li {
+  border: 1px solid transparent;
+  padding: 8px 20px;
+  border-radius: 18px;
+  transition: background-color 0.3s;
+}
+
+nav ul li.active {
+  background-color: #07c877;
+}
+
+nav ul li.active a {
+  color: #fff !important  ;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+}
+
+.table-container {
+  width: 100%;
+  border: 1px solid #eaeef4;
+  border-radius: 18px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 20px;
+  max-height: 60vh; /* Set a max height for the scroll effect */
+  position: relative; /* Ensure it's the relative container for the header */
+}
+
+.table-header {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  color: #9a9d9a;
+  position: sticky; /* Make the header stick */
+  top: 0; /* Stick to the top of the container */
+  background-color: #fff; /* Add background color to maintain visibility */
+  z-index: 1; /* Ensure it is above the content */
+  padding: 10px 0; /* Add some padding for visual separation */
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  color: #264f2b;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  /* text-align: center; */
+  align-items: center;
+}
+
+.table-cell:first-child {
+  flex: 0.1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.table-cell:last-child {
+  flex: 0.2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.first-letter {
+  font-style: italic;
+  color: gray;
+}
+
+.sound-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.sound-button img {
+  width: 20px;
+  height: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #07c877;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #07c877;
+}
+
+.no-results {
+  text-align: center;
+  color: #9a9d9a;
+  font-size: 18px;
+  padding: 20px 0;
+}
+
+.d-hidden {
+  display: none;
+}
+

@@ -1,0 +1,57 @@
+.word-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid #eaeef4;
+  border-radius: 16px;
+  padding: 24px;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.word-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.word-info div {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.word-info div p:nth-child(2) {
+  font-size: 14px;
+  font-weight: 400;
+  color: #5d7860;
+  font-style: italic;
+}
+
+.word-details p:nth-of-type(1),
+div p:nth-of-type(1) {
+  font-size: 18px;
+  color: #264f2b;
+  font-weight: 500;
+}
+.details {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.definition {
+  padding: 0 40px 0 0;
+  font-weight: 400;
+  font-size: 20px;
+  color: #264f2b;
+}
+
+.source {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  color: #5d7860;
+}
