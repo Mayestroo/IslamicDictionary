@@ -53,12 +53,10 @@ const WordDetails: React.FC<WordDetailsProps> = ({
 
   return (
     <div className="details">
-      <center>
+      {/* <center>
         <h2>{currentLanguage === "uz" ? word.worduz : word.wordeng}</h2>
-      </center>
-      <Link to="/" className="back-button" onClick={handleClick}>
-        <img src={ArrowLeft} alt="ArrowLeft" />
-      </Link>
+      </center> */}
+
       <div className="word-details">
         <p>{word.worduz}</p>
         <div className="word-info">
@@ -83,6 +81,11 @@ const WordDetails: React.FC<WordDetailsProps> = ({
         <p className="definition">{word.defenation}</p>
         {word.source && <p className="source"> {word.source}</p>}
       </div>
+      <Link to="/" className="back-button" onClick={handleClick}>
+        <a className="arrow-left">
+          {currentLanguage === "uz" ? "Ortga" : "Back"}
+        </a>
+      </Link>
     </div>
   );
 };
