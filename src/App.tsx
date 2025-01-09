@@ -34,7 +34,6 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
-        {/* Global header component */}
         <HeaderBar
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
@@ -44,7 +43,7 @@ const App: React.FC = () => {
 
         <Routes>
           <Route
-            path="/"
+            path="*"
             element={
               isMobile ? (
                 <DictionaryApp

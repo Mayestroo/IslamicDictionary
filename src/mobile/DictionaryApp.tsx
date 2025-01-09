@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import WordList from "./WordList";
 import WordDetails from "./WordDetails";
-// import './DictionaryApp.css';
 
 interface WordsData {
   id: number;
@@ -27,7 +26,6 @@ const DictionaryApp: React.FC<DictionaryAppProps> = ({
   searchQuery,
   currentLanguage,
   data,
-  // setSearchQuery,
 }) => {
   const [words, setWords] = useState<WordsData[]>([]);
 

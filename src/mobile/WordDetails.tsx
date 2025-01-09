@@ -4,7 +4,7 @@ import SoundIcon from "../assets/sound.svg";
 import ArrowLeft from "../assets/arrow-left.svg";
 import "./WordDetails.css";
 
-interface wordsData {
+interface WordsData {
   id: number;
   worduz: string;
   defenation: string;
@@ -17,8 +17,8 @@ interface wordsData {
 }
 
 interface WordDetailsProps {
-  words: wordsData[];
-  currentLanguage: "uz" | "en"; // Add currentLanguage as a prop
+  currentLanguage: "uz" | "en";
+  words: WordsData[];
 }
 
 const WordDetails: React.FC<WordDetailsProps> = ({
@@ -26,8 +26,12 @@ const WordDetails: React.FC<WordDetailsProps> = ({
   currentLanguage,
 }) => {
   const { id } = useParams<{ id: string }>();
+  console.log("Word ID from URL:", id);
   const [isVisible, setIsVisible] = useState(true);
-  const word = words.find((w: wordsData) => w.id === parseInt(id || "", 10));
+  const word = words.find((w: WordsData) => w.id === parseInt(id || "", 10));
+  console.log("Retrieved Word Object:", word);
+  console.log("Words Array in WordDetails:", words);
+  console.log("Current Language:", currentLanguage);
 
   if (!word) {
     return <p>Word not found.</p>;
