@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import SoundIcon from "../assets/sound.svg";
-import ArrowLeft from "../assets/arrow-left.svg";
 import "./WordDetails.css";
 
 interface WordsData {
