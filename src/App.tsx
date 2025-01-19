@@ -5,6 +5,7 @@ import MainComponent from "./main/MainComponent";
 import DictionaryApp from "./mobile/DictionaryApp";
 import DetailPage from "./detail/DetailPage";
 import Download from "./download/Download";
+import NotFound from "./404/404"; // Import NotFound component
 import wordsData from "./data/words_data.json"; // Import JSON data
 
 const App: React.FC = () => {
@@ -15,7 +16,6 @@ const App: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
 
   useEffect(() => {
-    // Save the selected language in localStorage
     localStorage.setItem("currentLanguage", currentLanguage);
   }, [currentLanguage]);
 
@@ -43,7 +43,7 @@ const App: React.FC = () => {
 
         <Routes>
           <Route
-            path="*"
+            path="/"
             element={
               isMobile ? (
                 <DictionaryApp
@@ -75,6 +75,8 @@ const App: React.FC = () => {
             path="/download"
             element={<Download currentLanguage={currentLanguage} />}
           />
+          {/* Add NotFound Route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
