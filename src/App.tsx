@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeaderBar from "./header/HeaderBar";
 import MainComponent from "./main/MainComponent";
 import DictionaryApp from "./mobile/DictionaryApp";
-import DetailPage from "./detail/DetailPage";
 import Download from "./download/Download";
-import NotFound from "./404/404"; // Import NotFound component
 import wordsData from "./data/words_data.json"; // Import JSON data
+import NotFound from "./404/404";
+import WordDetails from "./mobile/WordDetails"; // Import WordDetails component
 
 const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -39,6 +39,7 @@ const App: React.FC = () => {
           setSearchQuery={setSearchQuery}
           currentLanguage={currentLanguage}
           setCurrentLanguage={setCurrentLanguage}
+          data={wordsData}
         />
 
         <Routes>
@@ -50,32 +51,44 @@ const App: React.FC = () => {
                   searchQuery={searchQuery}
                   setSearchQuery={setSearchQuery}
                   currentLanguage={currentLanguage}
-                  data={wordsData} // Pass JSON data
+                  data={wordsData}
                 />
               ) : (
                 <MainComponent
                   searchQuery={searchQuery}
                   setSearchQuery={setSearchQuery}
                   currentLanguage={currentLanguage}
-                  data={wordsData} // Pass JSON data
+                  data={wordsData}
                 />
               )
-            }
-          />
-          <Route
-            path="/detail/:id"
-            element={
-              <DetailPage
-                currentLanguage={currentLanguage}
-                data={wordsData} // Pass JSON data
-              />
             }
           />
           <Route
             path="/download"
             element={<Download currentLanguage={currentLanguage} />}
           />
-          {/* Add NotFound Route */}
+          <Route
+            path="/word/:id"
+            element={
+              <WordDetails
+                data={
+                  wordsData as Array<{
+                    id: number;
+                    worduz: string;
+                    defenation: string;
+                    source: string;
+                    image: string;
+                    category_id: number;
+                    pronun: string | null;
+                    type: string;
+                    wordeng: string;
+                  }>
+                }
+                words={wordsData}
+                currentLanguage={currentLanguage}
+              />
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

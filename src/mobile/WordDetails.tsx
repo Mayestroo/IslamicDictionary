@@ -15,10 +15,31 @@ interface WordsData {
   wordeng: string;
 }
 
-interface WordDetailsProps {
-  currentLanguage: "uz" | "en";
+type WordDetailsProps = {
+  data: {
+    id: number;
+
+    worduz: string;
+
+    defenation: string;
+
+    source: string;
+
+    image: string;
+
+    category_id: number;
+
+    pronun: string | null;
+
+    type: string;
+
+    wordeng: string;
+  }[];
+
+  // other props
   words: WordsData[];
-}
+  currentLanguage: string;
+};
 
 const WordDetails: React.FC<WordDetailsProps> = ({
   words,
@@ -46,23 +67,19 @@ const WordDetails: React.FC<WordDetailsProps> = ({
 
   const handlePronounce = (word: string) => {
     const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = "en-US";
+    utterance.lang = currentLanguage === "uz" ? "uz-UZ" : "en-US";
     window.speechSynthesis.speak(utterance);
   };
 
   return (
     <div className="details">
-      {/* <center>
-        <h2>{currentLanguage === "uz" ? word.worduz : word.wordeng}</h2>
-      </center> */}
-
       <div className="word-details">
-        <p>{word.worduz}</p>
+        <h2>{currentLanguage === "uz" ? word.worduz : word.wordeng}</h2>
         <div className="word-info">
           <div>
-            <p>{word.wordeng}</p>
+            <p>{currentLanguage === "uz" ? word.worduz : word.wordeng}</p>
             <p>
-              <span>{word.type}</span> [{word.pronun}]
+              <span>{word.type}</span> [{word.pronun ? word.pronun : "N/A"}]
             </p>
           </div>
           <div>
@@ -73,12 +90,12 @@ const WordDetails: React.FC<WordDetailsProps> = ({
                 handlePronounce(word.wordeng);
               }}
             >
-              <img src={SoundIcon} alt="SoundIcon" />
+              <img src={SoundIcon} alt="Sound Icon" />
             </button>
           </div>
         </div>
         <p className="definition">{word.defenation}</p>
-        {word.source && <p className="source"> {word.source}</p>}
+        {word.source && <p className="source">{word.source}</p>}
       </div>
       <Link to="/" className="back-button" onClick={handleClick}>
         <a className="arrow-left">

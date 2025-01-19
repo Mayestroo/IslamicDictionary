@@ -7,12 +7,21 @@ import en from "../assets/eng.svg";
 import download from "../assets/download.svg";
 import search from "../assets/search.svg";
 
+
 interface HeaderBarProps {
+
   searchQuery: string;
+
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+
   currentLanguage: "uz" | "en";
+
   setCurrentLanguage: React.Dispatch<React.SetStateAction<"uz" | "en">>;
+
+  data: { [key: string]: any }[]; // Add the data property
+
 }
+
 
 const HeaderBar: React.FC<HeaderBarProps> = ({
   searchQuery,
