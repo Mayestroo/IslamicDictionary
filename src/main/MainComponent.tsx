@@ -120,26 +120,27 @@ function MainComponent({ currentLanguage, searchQuery, setSearchQuery, data }: M
               className="table-row"
               key={item.id}
               onClick={() => handleRowClick(item)}
+              style={{ cursor: "pointer" }}
             >
               <div className="table-cell">{item.id}</div>
               <div className="table-cell">
-                {currentLanguage === "uz" ? item.worduz : item.wordeng}
+          {currentLanguage === "uz" ? item.worduz : item.wordeng}
               </div>
               <div className="table-cell">
-                {currentLanguage === "uz" ? item.wordeng : item.worduz}
-                <span className="first-letter">&nbsp;({item.type[0]})</span>
+          {currentLanguage === "uz" ? item.wordeng : item.worduz}
+          <span className="first-letter">&nbsp;({item.type[0]})</span>
               </div>
               <div className="table-cell">[{item.pronun}]</div>
               <div className="table-cell">
-                <button
-                  className="sound-button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handlePronounce(item.wordeng);
-                  }}
-                >
-                  <img src={SoundIcon} alt="SoundIcon" />
-                </button>
+          <button
+            className="sound-button"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePronounce(item.wordeng);
+            }}
+          >
+            <img src={SoundIcon} alt="SoundIcon" />
+          </button>
               </div>
             </div>
           ))
