@@ -1,8 +1,28 @@
 import React from "react";
 import NotFoundImage from "../assets/404.svg";
 
-const NotFound: React.FC = () => {
+interface NotFoundProps {
+  currentLanguage: "en" | "uz";
+}
+
+const NotFound: React.FC<NotFoundProps> = ({ currentLanguage }) => {
   const isSmallScreen = window.innerWidth <= 1024;
+
+  const text = {
+    en: {
+      title: "Page Not Found",
+      description:
+        "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+      home: "Home",
+    },
+    uz: {
+      title: "Sahifa topilmadi",
+      description:
+        "Siz qidirayotgan sahifa nomi o‘zgartirilgan yoki vaqtincha mavjud bo‘lmagan bo‘lsa, o‘chirib tashlangan bo‘lishi mumkin.",
+      home: "Bosh sahifa",
+    },
+  };
+
   return (
     <div
       style={{
@@ -15,7 +35,7 @@ const NotFound: React.FC = () => {
     >
       <img src={NotFoundImage} alt="404 Not Found" />
       <p style={{ fontSize: "40px", color: "#000", marginTop: "20px" }}>
-        Sahifa topilmadi
+        {text[currentLanguage].title}
       </p>
       <p
         style={{
@@ -25,8 +45,7 @@ const NotFound: React.FC = () => {
           marginTop: "20px",
         }}
       >
-        Siz qidirayotgan sahifa nomi o‘zgartirilgan yoki vaqtincha mavjud
-        bo‘lmagan bo‘lsa, o‘chirib tashlangan bo‘lishi mumkin.
+        {text[currentLanguage].description}
       </p>
       <a
         href="/"
@@ -39,7 +58,7 @@ const NotFound: React.FC = () => {
           marginTop: "20px",
         }}
       >
-        Bosh sahifa
+        {text[currentLanguage].home}
       </a>
     </div>
   );
